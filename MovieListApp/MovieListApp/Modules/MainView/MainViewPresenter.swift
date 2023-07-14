@@ -9,10 +9,7 @@ import UIKit
 
 final class MainViewPresenter {
 	static func make() -> UIViewController{
-		
-		let storyBoard = UIStoryboard(name: "Search", bundle: nil)
-		let viewController = storyBoard.instantiateViewController(withIdentifier: "MainViewController")
-		
+		let viewController = MainViewController()
 		return viewController
 	}
 }

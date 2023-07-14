@@ -24,6 +24,7 @@
 		20C167FF2A616D07008768EC /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C167FB2A616D07008768EC /* MovieListViewController.swift */; };
 		20C168002A616D07008768EC /* MovieListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C167FC2A616D07008768EC /* MovieListPresenter.swift */; };
 		20C168012A616D07008768EC /* MovieListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C167FD2A616D07008768EC /* MovieListRouter.swift */; };
+		20C168042A61AAEF008768EC /* MoviePreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C168032A61AAEF008768EC /* MoviePreviewCell.swift */; };
 		20F0CEA22A5EE7CE00EDBD3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0CEA12A5EE7CE00EDBD3B /* AppDelegate.swift */; };
 		20F0CEAB2A5EE7D100EDBD3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20F0CEAA2A5EE7D100EDBD3B /* Assets.xcassets */; };
 		20F0CEAE2A5EE7D100EDBD3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20F0CEAC2A5EE7D100EDBD3B /* LaunchScreen.storyboard */; };
@@ -75,6 +76,7 @@
 		20C167FB2A616D07008768EC /* MovieListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
 		20C167FC2A616D07008768EC /* MovieListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListPresenter.swift; sourceTree = "<group>"; };
 		20C167FD2A616D07008768EC /* MovieListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListRouter.swift; sourceTree = "<group>"; };
+		20C168032A61AAEF008768EC /* MoviePreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePreviewCell.swift; sourceTree = "<group>"; };
 		20F0CE9E2A5EE7CE00EDBD3B /* MovieListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F0CEA12A5EE7CE00EDBD3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20F0CEAA2A5EE7D100EDBD3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 		20C167F92A616D07008768EC /* MovieList */ = {
 			isa = PBXGroup;
 			children = (
+				20C168022A61AAA5008768EC /* Cell */,
 				20C167FA2A616D07008768EC /* MovieListInteractor.swift */,
 				20C167FB2A616D07008768EC /* MovieListViewController.swift */,
 				20C167FC2A616D07008768EC /* MovieListPresenter.swift */,
@@ -186,6 +189,22 @@
 			);
 			name = MovieList;
 			path = ../../../../CIVIPERGenerator/MovieList;
+			sourceTree = "<group>";
+		};
+		20C168022A61AAA5008768EC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				20C168032A61AAEF008768EC /* MoviePreviewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		20C168052A61AC81008768EC /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				20F0CEAA2A5EE7D100EDBD3B /* Assets.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		20F0CE952A5EE7CE00EDBD3B = {
@@ -213,8 +232,8 @@
 		20F0CEA02A5EE7CE00EDBD3B /* MovieListApp */ = {
 			isa = PBXGroup;
 			children = (
+				20C168052A61AC81008768EC /* Resource */,
 				20F0CED12A5EE7E800EDBD3B /* App */,
-				20F0CEAA2A5EE7D100EDBD3B /* Assets.xcassets */,
 				20F0CED42A5EE9B700EDBD3B /* Base */,
 				2074C19E2A5FE4BE00815FD0 /* Entities */,
 				20F0CEAF2A5EE7D100EDBD3B /* Info.plist */,
@@ -545,6 +564,7 @@
 				20C167DD2A60A8A2008768EC /* GenresPresenter.swift in Sources */,
 				20C168012A616D07008768EC /* MovieListRouter.swift in Sources */,
 				20F0CED32A5EE87500EDBD3B /* AppRouter.swift in Sources */,
+				20C168042A61AAEF008768EC /* MoviePreviewCell.swift in Sources */,
 				20C167E82A60AD6F008768EC /* ProfileInteractor.swift in Sources */,
 				20C167E12A60A8DC008768EC /* NetworkManager.swift in Sources */,
 				20C167DF2A60A8B6008768EC /* GenresViewController.swift in Sources */,

@@ -39,15 +39,11 @@ class GenresPresenter: GenresPresenterProtocol {
 		
 	}
 
-	
 	func fetchGenres() {
 		interactor?.fetchGenres()
 	}
 	
 	func showMovieController(genreId: Int) {
-		
-		//guard let navigationController =
-		
 		router?.pushToMovieScreen(genreId: genreId)
 	}
 }

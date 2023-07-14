@@ -12,7 +12,7 @@ final class GenreBuilder {
 		
 		let vc = GenresViewController()
 		let interactor = GenresInteractor()
-		let router = GenreRouter()
+		let router = GenreRouter(viewController: vc)
 		let presenter = GenresPresenter(view: vc, interactor: interactor, router: router)
 		
 		vc.presenter = presenter

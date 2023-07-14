@@ -18,7 +18,7 @@ class GenresViewController: UIViewController {
 	var presenter: GenresPresenterProtocol?
 	
 	private var collectionView: UICollectionView!
-	private var genres: [Genre] = []//[Genre(id: 01, name: "test1"), Genre(id: 02, name: "test2"), Genre(id: 03, name: "test3")]
+	private var genres: [Genre] = []
 	
 	init(presentor: GenresPresenterProtocol?) {
 		super.init(nibName: nil, bundle: nil)

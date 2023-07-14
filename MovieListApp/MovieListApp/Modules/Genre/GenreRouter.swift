@@ -11,9 +11,16 @@ class GenreRouter: GenresRouterProtocol {
 	
 	weak var viewController: UIViewController?
 	var presenter: GenresPresenterProtocol?
+	
+	init(viewController: UIViewController) {
+		self.viewController = viewController
+	}
 		
 	func pushToMovieScreen(genreId: Int) {
 		let movieScreen = MovieListRouter.setupModule()
-		viewController?.navigationController?.pushViewController(movieScreen, animated: true)
+		movieScreen.genreId = "\(genreId)"
+		
+		viewController?.present(movieScreen, animated: true, completion: nil)
+
 	}
 }

@@ -20,7 +20,16 @@ class GenreRouter: GenresRouterProtocol {
 		let movieScreen = MovieListRouter.setupModule()
 		movieScreen.genreId = "\(genreId)"
 		
-		viewController?.present(movieScreen, animated: true, completion: nil)
+		guard let nvc = viewController?.navigationController else {
+			print("[jakwan] nvc empty")
+			return
+		}
+		
+		print("[jakwan] nvc not empty")
+		
+		nvc.pushViewController(movieScreen, animated: true)
+		
+//		viewController?.present(movieScreen, animated: true, completion: nil)
 
 	}
 }

@@ -17,7 +17,25 @@ protocol GenresViewProtocol: AnyObject {
 class GenresViewController: UIViewController {
 	var presenter: GenresPresenterProtocol?
 	
-	private var collectionView: UICollectionView!
+	private let genreLabel: UILabel = {
+		let label = UILabel()
+		label.text = "Genre"
+		label.textAlignment = .center
+		return label
+	}()
+	
+	private let collectionView: UICollectionView = {
+		let layout = UICollectionViewFlowLayout()
+		layout.scrollDirection = .vertical
+		layout.minimumInteritemSpacing = 10
+		layout.minimumLineSpacing = 10
+		
+		let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+		collectionView.backgroundColor = .white
+		
+		return collectionView
+	}()
+	
 	private var genres: [Genre] = []
 	
 	init(presentor: GenresPresenterProtocol?) {
@@ -36,22 +54,33 @@ class GenresViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		presenter?.fetchGenres()
-		setupCollectionView()
+		setupViews()
 	}
 	
-	private func setupCollectionView() {
-		let layout = UICollectionViewFlowLayout()
-		layout.scrollDirection = .vertical
-		layout.minimumInteritemSpacing = 10
-		layout.minimumLineSpacing = 10
-		
-		collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
+	private func setupViews() {
 		collectionView.delegate = self
 		collectionView.dataSource = self
-		collectionView.register(GenreCollectionViewCell.self, forCellWithReuseIdentifier: "GenreCell")
-		collectionView.backgroundColor = .white
 		
+		collectionView.register(GenreCollectionViewCell.self, forCellWithReuseIdentifier: "GenreCell")
+
+		view.addSubview(genreLabel)
 		view.addSubview(collectionView)
+		
+		genreLabel.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([
+			genreLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+			genreLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+			genreLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+			genreLabel.heightAnchor.constraint(equalToConstant: 40)
+		])
+		
+		collectionView.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([
+			collectionView.topAnchor.constraint(equalTo: genreLabel.bottomAnchor, constant: 20),
+			collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+			collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+			collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+		])
 		
 	}
 }
@@ -69,6 +98,11 @@ extension GenresViewController: UICollectionViewDelegateFlowLayout, UICollection
 		let genre = genres[indexPath.item]
 		cell.nameLabel.text = genre.name
 		cell.backgroundColor = .lightGray
+		cell.layer.cornerRadius = 6.0
+		cell.layer.borderWidth = 0
+		cell.layer.borderColor = UIColor.clear.cgColor
+		cell.layer.masksToBounds = true
+		
 		return cell
 	}
 	

@@ -30,6 +30,9 @@ class GenreCollectionViewCell: UICollectionViewCell {
 	
 	private func setupUI() {
 		contentView.addSubview(nameLabel)
+		nameLabel.translatesAutoresizingMaskIntoConstraints = false
+		nameLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+		nameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
 		
 		NSLayoutConstraint.activate([
 			nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),

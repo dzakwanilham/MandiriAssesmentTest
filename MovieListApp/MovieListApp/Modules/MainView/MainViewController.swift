@@ -16,17 +16,19 @@ class MainViewController: UITabBarController {
 	}
 	
 	private func setupTabs() {
+		
 		let genreTab = GenreBuilder.make()
-		let homeIcon = UITabBarItem(title: "Genre", image: UIImage(named: "home"), tag: 0)
+		let imageIcon = UIImage(named: "list-image")
+		
+		let homeIcon = UITabBarItem(title: "Genre", image: imageIcon, tag: 0)
 		
 		homeIcon.standardAppearance?.selectionIndicatorImage
 		genreTab.tabBarItem = homeIcon
 		
-		self.view.backgroundColor = .darkGray
+		self.view.backgroundColor = .white
 		
 		self.setViewControllers([genreTab], animated: true)
 	}
-
 }
 
 extension MainViewController: UITabBarControllerDelegate {

@@ -12,8 +12,9 @@ class BaseNavigationController: UINavigationController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configureNavigationBar()
-		UITabBar.appearance().barTintColor = .brown
-		UITabBar.appearance().tintColor = .darkGray
+		UITabBar.appearance().barTintColor = .lightGray
+		UITabBar.appearance().tintColor = .black
+		UITabBar.appearance().backgroundColor = .darkGray
 	}
 	
 	fileprivate func configureNavigationBar() {

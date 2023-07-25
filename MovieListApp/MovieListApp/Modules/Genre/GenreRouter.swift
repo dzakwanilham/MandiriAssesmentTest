@@ -21,12 +21,9 @@ class GenreRouter: GenresRouterProtocol {
 		movieScreen.genreId = "\(genreId)"
 		
 		guard let nvc = viewController?.navigationController else {
-			print("[jakwan] nvc empty")
 			return
 		}
-		
-		print("[jakwan] nvc not empty")
-		
+				
 		nvc.pushViewController(movieScreen, animated: true)
 		
 //		viewController?.present(movieScreen, animated: true, completion: nil)
